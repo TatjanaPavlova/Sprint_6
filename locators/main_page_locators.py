@@ -28,3 +28,6 @@ class MainPageLocators:
 
     order_button_in_main = By.XPATH, '//div[contains(@class, "Home_FinishButton")]/button'
     order_button_in_header = By.XPATH, '//div[contains(@class, "Header_Nav")]/button[text() = "Заказать"]'
+
+    header_logo_scooter = (By.XPATH, '//a[contains(@class,"Header_LogoScooter")]')
+    header_logo_yandex = (By.XPATH, '//a[contains(@class,"Header_LogoYandex")]')

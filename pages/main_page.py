@@ -4,56 +4,64 @@ import allure
 
 class MainPage(BasePage):
 
-    @allure.step('Подождать загрузки кнопки "Заказать" в хэдере')
-    def wait_visibility_of_order_button_in_header(self):
-        self.wait_visibility_of_element(MainPageLocators.order_button_in_header)
+    @allure.step('Ожидание кнопки "Заказать" в хэдере')
+    def wait_order_button_in_header(self):
+        self.wait_for_visible(MainPageLocators.order_button_in_header)
 
-    @allure.step('Кликнуть по кнопке "Заказать" в хэдере')
-    def click_on_order_button_in_header(self):
-        self.click_on_element(MainPageLocators.order_button_in_header)
+    @allure.step('Клик по кнопке "Заказать" в хэдере')
+    def click_order_button_in_header(self):
+        self.click(MainPageLocators.order_button_in_header)
 
-    @allure.step('Подождать загрузки части лого с надписью "Самокат" в хэдере')
-    def wait_visibility_of_header_logo_scooter(self):
-        self.wait_visibility_of_element(MainPageLocators.header_logo_scooter)
+    @allure.step('Ожидание кнопки "Заказать" внизу страницы')
+    def wait_order_button_in_main(self):
+        self.wait_for_visible(MainPageLocators.order_button_in_main)
 
-    @allure.step('Подождать загрузки части лого с надписью "Яндекс" в хэдере')
-    def wait_visibility_of_header_logo_yandex(self):
-        self.wait_visibility_of_element(MainPageLocators.header_logo_yandex)
+    @allure.step('Клик по кнопке "Заказать" внизу страницы')
+    def click_order_button_in_main(self):
+        self.click(MainPageLocators.order_button_in_main)
 
-    @allure.step('Кликнуть по части лого с надписью "Самокат" в хэдере')
-    def click_on_header_logo_scooter(self):
-        self.click_on_element(MainPageLocators.header_logo_scooter)
+    @allure.step('Ожидание логотипа "Самокат" в хэдере')
+    def wait_logo_scooter(self):
+        self.wait_for_visible(MainPageLocators.header_logo_scooter)
 
-    @allure.step('Кликнуть по части лого с надписью "Яндекс" в хэдере')
-    def click_on_header_logo_yandex(self):
-        self.click_on_element(MainPageLocators.header_logo_yandex) 
+    @allure.step('Клик по логотипу "Самокат"')
+    def click_logo_scooter(self):
+        self.click(MainPageLocators.header_logo_scooter)
 
-    @allure.step('Подождать загрузки заголовка главной страницы')
-    def wait_visibility_of_main_header(self):
-        self.wait_visibility_of_element(MainPageLocators.main_header)
+    @allure.step('Ожидание логотипа "Яндекс" в хэдере')
+    def wait_logo_yandex(self):
+        self.wait_for_visible(MainPageLocators.header_logo_yandex)
 
-    @allure.step('Проверить отображение заголовка главной страницы')
-    def check_displaying_of_main_header(self):
-        self.check_displaying_of_element(MainPageLocators.main_header)
+    @allure.step('Клик по логотипу "Яндекс"')
+    def click_logo_yandex(self):
+        self.click(MainPageLocators.header_logo_yandex)
 
-    @allure.step('Проскроллить до секции "Вопросы о важном"')
-    def scroll_to_faq_section(self):
-        self.scroll_to_element(MainPageLocators.faq_section)
+    @allure.step('Ожидание заголовка главной страницы')
+    def wait_main_header(self):
+        self.wait_for_visible(MainPageLocators.main_header)
 
-    @allure.step('Подождать загрузки нужного вопроса в "Вопросах о важном"')
-    def wait_visibility_of_faq_items(self, data):
-        self.wait_visibility_of_element(MainPageLocators.faq_questions_items[data])
+    @allure.step('Проверка отображения заголовка главной страницы')
+    def is_main_header_displayed(self):
+        return self.is_displayed(MainPageLocators.main_header)
 
-    @allure.step('Кликнуть на нужный вопрос в "Вопросах о важном"')
-    def click_on_faq_items(self, data):
-        self.click_on_element(MainPageLocators.faq_questions_items[data])
+    @allure.step('Скролл до секции "Вопросы о важном"')
+    def scroll_to_faq(self):
+        self.scroll_to(MainPageLocators.faq_section)
 
-    @allure.step('Подождать загрузки нужного ответа в "Вопросах о важном"')
-    def wait_visibility_of_faq_answer(self, data):
-        self.wait_visibility_of_element(MainPageLocators.faq_answers_items[data])
+    @allure.step('Ожидание вопроса FAQ')
+    def wait_faq_question(self, index):
+        self.wait_for_visible(MainPageLocators.faq_questions[index])
 
-    @allure.step('Получить текст нужного ответа в "Вопросах о важном"')
-    def get_displayed_text_from_faq_answer(self, data):
-        return self.get_text_on_element(MainPageLocators.faq_answers_items[data])
+    @allure.step('Клик по вопросу FAQ')
+    def click_faq_question(self, index):
+        self.click(MainPageLocators.faq_questions[index])
+
+    @allure.step('Ожидание ответа FAQ')
+    def wait_faq_answer(self, index):
+        self.wait_for_visible(MainPageLocators.faq_answers[index])
+
+    @allure.step('Получение текста ответа FAQ')
+    def get_faq_answer_text(self, index):
+        return self.get_text(MainPageLocators.faq_answers[index])
 
     

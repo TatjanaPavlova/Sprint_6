@@ -12,7 +12,7 @@ class OrderPageLocators:
     title_page_rent = (By.XPATH, "//div[text()='Про аренду' and contains (@class, 'Order_Header')]")
     date = (By.XPATH, "//input[@placeholder = '* Когда привезти самокат']")
     calendar = (By.XPATH, "//div[@class='react-datepicker-popper']")
-    calendar_item = (By.XPATH, "//div[contains@class, 'react-datepicker' and contains(@tabindex, '0')]")
+    calendar_item = (By.XPATH, "//div[contains(@class, 'react-datepicker') and contains(@tabindex, '0')]")
     field_rental_period = (By.XPATH, "//div[text()='* Срок аренды']")
     dropdown_item_rental_period = (By.XPATH, ".//div[@class = 'Dropdown-menu']/div[text()='трое суток']")
     checkbox_grey_color_scooter = (By.XPATH, "//input[@id='grey']")

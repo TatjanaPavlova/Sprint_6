@@ -11,8 +11,8 @@ class TestOrderPage:
     @allure.title('Позитивный сценарий оформления заказа')
     @allure.description('Сквозное тестирование функциональности оформления заказа из двух точек входа')
     @pytest.mark.parametrize('order_button, user_data', [
-        (MainPageLocators.ORDER_BUTTON_HEADER, TestData.test_data_user1),
-        (MainPageLocators.ORDER_BUTTON_MAIN, TestData.test_data_user2)
+        (MainPageLocators.order_button_in_header, TestData.test_data_user1),
+        (MainPageLocators.order_button_in_main, TestData.test_data_user2)
     ])
     def test_order_success(self, driver, order_button, user_data):
         main_page = MainPage(driver)

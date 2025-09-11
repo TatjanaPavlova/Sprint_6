@@ -20,4 +20,5 @@ class TestLogoNavigation:
         main_page.wait_logo_yandex()
         main_page.click_logo_yandex()
         main_page.switch_to_next_tab()
-        assert main_page.get_title() == 'Дзен'
+        main_page.wait_for_url("dzen.ru")
+        assert "dzen.ru" in main_page.get_current_url()

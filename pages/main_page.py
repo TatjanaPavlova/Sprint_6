@@ -6,7 +6,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание кнопки "Заказать" в хэдере')
     def wait_order_button_in_header(self):
-        self.wait_for_visible(MainPageLocators.order_button_in_header)
+        self.wait_for_visibility(MainPageLocators.order_button_in_header)
 
     @allure.step('Клик по кнопке "Заказать" в хэдере')
     def click_order_button_in_header(self):
@@ -14,7 +14,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание кнопки "Заказать" внизу страницы')
     def wait_order_button_in_main(self):
-        self.wait_for_visible(MainPageLocators.order_button_in_main)
+        self.wait_for_visibility(MainPageLocators.order_button_in_main)
 
     @allure.step('Клик по кнопке "Заказать" внизу страницы')
     def click_order_button_in_main(self):
@@ -22,7 +22,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание логотипа "Самокат" в хэдере')
     def wait_logo_scooter(self):
-        self.wait_for_visible(MainPageLocators.header_logo_scooter)
+        self.wait_for_visibility(MainPageLocators.header_logo_scooter)
 
     @allure.step('Клик по логотипу "Самокат"')
     def click_logo_scooter(self):
@@ -30,7 +30,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание логотипа "Яндекс" в хэдере')
     def wait_logo_yandex(self):
-        self.wait_for_visible(MainPageLocators.header_logo_yandex)
+        self.wait_for_visibility(MainPageLocators.header_logo_yandex)
 
     @allure.step('Клик по логотипу "Яндекс"')
     def click_logo_yandex(self):
@@ -38,7 +38,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание заголовка главной страницы')
     def wait_main_header(self):
-        self.wait_for_visible(MainPageLocators.main_header)
+        self.wait_for_visibility(MainPageLocators.main_header)
 
     @allure.step('Проверка отображения заголовка главной страницы')
     def is_main_header_displayed(self):
@@ -50,7 +50,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание вопроса FAQ')
     def wait_faq_question(self, index):
-        self.wait_for_visible(MainPageLocators.faq_questions[index])
+        self.wait_for_visibility(MainPageLocators.faq_questions[index])
 
     @allure.step('Клик по вопросу FAQ')
     def click_faq_question(self, index):
@@ -58,7 +58,7 @@ class MainPage(BasePage):
 
     @allure.step('Ожидание ответа FAQ')
     def wait_faq_answer(self, index):
-        self.wait_for_visible(MainPageLocators.faq_answers[index])
+        self.wait_for_visibility(MainPageLocators.faq_answers[index])
 
     @allure.step('Получение текста ответа FAQ')
     def get_faq_answer_text(self, index):

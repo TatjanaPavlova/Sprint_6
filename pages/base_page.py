@@ -31,9 +31,13 @@ class BasePage:
     def switch_to_next_tab(self):
         self.driver.switch_to.window(self.driver.window_handles[1])
     
-    @allure.step("Получение заголовка страницы")
-    def get_title(self):
-        return self.driver.title
+    @allure.step("Получение адреса страницы")
+    def get_current_url(self):
+        return self.driver.current_url
+    
+    @allure.step("Ожидание загрузки страницы")
+    def wait_for_url(self, text, timeout=10):
+        WebDriverWait(self.driver, timeout).until(EC.url_contains(text))
     
     @allure.step("Проверка отображения элемента")
     def is_displayed(self, locator):

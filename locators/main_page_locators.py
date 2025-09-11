@@ -4,7 +4,7 @@ class MainPageLocators:
     main_header = By.XPATH, '//div[contains(@class, "Header_Header__214zg")]'
     faq_section = By.XPATH, '//div[contains(@class, "Home_FAQ")]'
 
-    faq_questions_items = {
+    faq_questions = {
         1: [By.XPATH, '//div[@id="accordion__heading-0"]/parent::div'],
         2: [By.XPATH, '//div[@id="accordion__heading-1"]/parent::div'],
         3: [By.XPATH, '//div[@id="accordion__heading-2"]/parent::div'],
@@ -15,7 +15,7 @@ class MainPageLocators:
         8: [By.XPATH, '//div[@id="accordion__heading-7"]/parent::div']
     }
 
-    faq_answers_items = {
+    faq_answers = {
         1: [By.XPATH, '//div[@id="accordion__panel-0"]'],
         2: [By.XPATH, '//div[@id="accordion__panel-1"]'],
         3: [By.XPATH, '//div[@id="accordion__panel-2"]'],

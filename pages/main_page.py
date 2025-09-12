@@ -63,5 +63,9 @@ class MainPage(BasePage):
     @allure.step('Получение текста ответа FAQ')
     def get_faq_answer_text(self, index):
         return self.get_text(MainPageLocators.faq_answers[index])
+    
+    @allure.step('Подтверждение согласия с куки')
+    def accept_cookie_banner(self):
+        self.accept_cookies(MainPageLocators.cookie_accept_button)
 
     

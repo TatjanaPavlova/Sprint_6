@@ -1,5 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 import allure
 
 class BasePage:
@@ -42,3 +43,17 @@ class BasePage:
     @allure.step("Проверка отображения элемента")
     def is_displayed(self, locator):
         return self.driver.find_element(*locator).is_displayed()
+    
+    @allure.step("Согласиться с куки")
+    def accept_cookies(self, locator):
+        try:
+            button = WebDriverWait(self.driver, 3).until(EC.element_to_be_clickable(locator))
+            button.click()
+        except TimeoutException:
+            pass
+
+    @allure.step("Ввод значения в поле")
+    def send_keys(self, locator, text):
+        element = self.driver.find_element(*locator)
+        element.clear()
+        element.send_keys(text)

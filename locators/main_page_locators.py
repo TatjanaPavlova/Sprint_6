@@ -31,3 +31,5 @@ class MainPageLocators:
 
     header_logo_scooter = (By.XPATH, '//a[contains(@class,"Header_LogoScooter")]')
     header_logo_yandex = (By.XPATH, '//a[contains(@class,"Header_LogoYandex")]')
+
+    cookie_accept_button = (By.CLASS_NAME, "App_CookieButton__3cvqF")

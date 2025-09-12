@@ -19,6 +19,7 @@ class TestOrderPage:
         order_page = OrderPage(driver)
 
         main_page.scroll_to(order_button)
+        main_page.accept_cookie_banner()
         main_page.click(order_button)
 
         order_page.fill_first_form(user_data)

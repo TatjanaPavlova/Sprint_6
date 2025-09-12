@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
 from locators.order_page_locators import OrderPageLocators
+from selenium.webdriver.common.keys import Keys
 import allure
 
 class OrderPage(BasePage):
@@ -17,8 +18,11 @@ class OrderPage(BasePage):
 
     @allure.step('Заполнение второй части формы заказа')
     def fill_second_form(self, data):
-        self.wait_for_visibility(OrderPageLocators.date)
-        self.fill_input(OrderPageLocators.date, data[5])
+        # Ввод даты
+        date_input = self.driver.find_element(*OrderPageLocators.date)
+        date_input.clear()
+        date_input.send_keys(data[5])
+        date_input.send_keys(Keys.ENTER)  # закрываем календарь
         self.click(OrderPageLocators.field_rental_period)
         self.click(OrderPageLocators.dropdown_item_rental_period)
         self.click(OrderPageLocators.checkbox_grey_color_scooter)

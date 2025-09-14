@@ -1,2 +1,49 @@
-# Sprint_6
-Project for Yandex Practicum (work with POM)
+# Sprint_6 - UI тестирование Яндекс.Самокат
+Проект написан для финального задания 6 спринта по автоматизации UI-тестов с использованием **Page Object Model (POM)**.
+
+Тестируем сайт «Яндекс.Самокат» в браузере Firefox через **Selenium**, покрывая ключевой функционал:  
+- Раздел "Вопросы о важном" (FAQ)  
+- Сквозной сценарий оформления заказа  
+- Проверка логотипов и редиректов  
+
+## Стек
+- Python 3.10+  
+- Selenium WebDriver  
+- Pytest  
+- Allure для отчётов  
+- Firefox + geckodriver
+
+## Структура проекта
+- `pages/` - Page Object для страниц приложения
+- `locators/` - локаторы элементов для Page Object
+- `tests/` - тесты, покрывающие функционал
+- `data.py` - тестовые данные
+- `conftest.py` - фикстуры для запуска браузера
+
+## Покрытие тестами
+- Позитивный сценарий оформления заказа (две точки входа, два набора данных)  
+- FAQ: проверка раскрытия всех вопросов  
+- Проверка переходов по логотипам  
+
+## Создание и активация виртуального окружения
+```bash
+python -m venv venv
+source venv/bin/activate   # для Linux/Mac
+venv\Scripts\activate      # для Windows
+```
+
+## Запуск тестов
+1. Установить зависимости:
+```bash
+pip install -r requirements.txt
+```
+
+2. Запустить тесты:
+```bash
+pytest --alluredir=allure_results
+```
+
+3. Сгенерировать Allure-отчёт:
+```bash
+allure serve allure_results
+```
